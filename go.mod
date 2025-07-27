@@ -70,7 +70,7 @@ require (
 	gorm.io/driver/sqlite v1.5.4
 	gorm.io/gorm v1.30.0
 	gorm.io/plugin/dbresolver v1.6.0
-github.com/go-dev-frame/sponge v1.14.2
+github.com/go-dev-frame/sponge v1.14.3
 )
 
 require (

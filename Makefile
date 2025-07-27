@@ -44,7 +44,7 @@ docs:
 .PHONY: build
 # Build user_server
 build:
-	@echo "building 'user_server', linux binary file will output to 'cmd/user_server'"
+	@echo "building 'user_server', binary file will output to 'cmd/user_server'"
 	@cd cmd/user_server && CGO_ENABLED=0 go build
 
 
