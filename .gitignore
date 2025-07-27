@@ -20,6 +20,7 @@ dist/
 *.iml
 *.ipr
 *.iws
+__debug_bin*
 
 cmd/user_server/user_server
-
+sponge_user_server.sublime-workspace

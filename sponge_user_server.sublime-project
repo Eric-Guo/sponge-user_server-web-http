@@ -1,0 +1,20 @@
+{
+  "folders":
+  [
+    {
+      "path": ".",
+      "folder_exclude_patterns": ["tmp"],
+      "file_exclude_patterns": ["*.sublime-workspace","cmd/user_server/user_server","cmd/user_server/__debug_bin*"]
+    },
+    {
+      "path": "../oss/sponge",
+      "folder_exclude_patterns": [".github","cmd/sponge/server/static"]
+    }
+  ],
+    "settings":
+    {
+      "translate_tabs_to_spaces": false,
+      "trim_trailing_white_space_on_save": true,
+      "tab_size": 2
+    }
+}
