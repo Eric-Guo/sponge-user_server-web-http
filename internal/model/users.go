@@ -103,5 +103,3 @@ var UsersColumnNames = map[string]bool{
 	"position_nc_pk_post":            true,
 	"windows_sid":                    true,
 }
-
-
