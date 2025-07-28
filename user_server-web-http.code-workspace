@@ -2,7 +2,17 @@
 	"folders": [
 		{
 			"path": "."
-		}
+		},
+    {
+      "path": "../oss/sponge"
+    }
 	],
-	"settings": {}
+	"settings": {
+		"files.exclude": {
+			"**/.tmp": true,
+			"**/.github": true,
+			"cmd/sponge/server/static": true,
+			"cmd/user_server/user_server": true
+		}
+  }
 }
