@@ -92,7 +92,7 @@ func initConfig() {
 // get configuration from local configuration file
 func getConfigFromLocal() {
 	if configFile == "" {
-		configFile = configs.Path("user_server.yml")
+		configFile = configs.Location("user_server.yml")
 	}
 	err := config.Init(configFile)
 	if err != nil {
