@@ -1,3 +1,5 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Eric-Guo/sponge-user_server-web-http)
+
 ## user_server
 
 | Feature             | Value          |
