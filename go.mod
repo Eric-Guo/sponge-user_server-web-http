@@ -126,3 +126,5 @@ require (
 	gorm.io/driver/mysql v1.5.7 // indirect
 	gorm.io/plugin/dbresolver v1.6.0 // indirect
 )
+
+replace github.com/go-dev-frame/sponge => /Users/guochunzhong/git/oss/sponge
