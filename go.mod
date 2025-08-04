@@ -1,11 +1,11 @@
 module test-user-server
 
-go 1.24.5
+go 1.24.6
 
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.0
 	github.com/gin-gonic/gin v1.10.1
-	github.com/go-dev-frame/sponge v1.14.3
+	github.com/go-dev-frame/sponge v1.14.4
 	github.com/stretchr/testify v1.9.0
 	github.com/swaggo/files v0.0.0-20220728132757-551d4a08d97a
 	github.com/swaggo/gin-swagger v1.5.2
