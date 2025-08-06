@@ -101,7 +101,7 @@ func NewRouter() *gin.Engine {
 	if config.Get().App.Env != "prod" {
 		r.GET("/config", gin.WrapF(errcode.ShowConfig([]byte(config.Show()))))
 		// register swagger routes, generate code via swag init
-		docs.SwaggerInfo.BasePath = ""
+		docs.SwaggerInfo.BasePath = "/"
 		// access path /swagger/index.html
 		r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	}
