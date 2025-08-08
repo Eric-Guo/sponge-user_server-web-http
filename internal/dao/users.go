@@ -105,19 +105,19 @@ func (d *usersDao) updateDataByID(ctx context.Context, db *gorm.DB, table *model
 	if table.ResetPasswordToken != "" {
 		update["reset_password_token"] = table.ResetPasswordToken
 	}
-	if table.ResetPasswordSentAt.IsZero() == false {
+	if table.ResetPasswordSentAt != nil && table.ResetPasswordSentAt.IsZero() == false {
 		update["reset_password_sent_at"] = table.ResetPasswordSentAt
 	}
-	if table.RememberCreatedAt.IsZero() == false {
+	if table.RememberCreatedAt != nil && table.RememberCreatedAt.IsZero() == false {
 		update["remember_created_at"] = table.RememberCreatedAt
 	}
 	if table.SignInCount != 0 {
 		update["sign_in_count"] = table.SignInCount
 	}
-	if table.CurrentSignInAt.IsZero() == false {
+	if table.CurrentSignInAt != nil && table.CurrentSignInAt.IsZero() == false {
 		update["current_sign_in_at"] = table.CurrentSignInAt
 	}
-	if table.LastSignInAt.IsZero() == false {
+	if table.LastSignInAt != nil && table.LastSignInAt.IsZero() == false {
 		update["last_sign_in_at"] = table.LastSignInAt
 	}
 	if table.CurrentSignInIP != "" {
@@ -129,10 +129,10 @@ func (d *usersDao) updateDataByID(ctx context.Context, db *gorm.DB, table *model
 	if table.ConfirmationToken != "" {
 		update["confirmation_token"] = table.ConfirmationToken
 	}
-	if table.ConfirmedAt.IsZero() == false {
+	if table.ConfirmedAt != nil && table.ConfirmedAt.IsZero() == false {
 		update["confirmed_at"] = table.ConfirmedAt
 	}
-	if table.ConfirmationSentAt.IsZero() == false {
+	if table.ConfirmationSentAt != nil && table.ConfirmationSentAt.IsZero() == false {
 		update["confirmation_sent_at"] = table.ConfirmationSentAt
 	}
 	if table.UnconfirmedEmail != "" {
@@ -144,19 +144,19 @@ func (d *usersDao) updateDataByID(ctx context.Context, db *gorm.DB, table *model
 	if table.UnlockToken != "" {
 		update["unlock_token"] = table.UnlockToken
 	}
-	if table.LockedAt.IsZero() == false {
+	if table.LockedAt != nil && table.LockedAt.IsZero() == false {
 		update["locked_at"] = table.LockedAt
 	}
 	if table.InvitationToken != "" {
 		update["invitation_token"] = table.InvitationToken
 	}
-	if table.InvitationCreatedAt.IsZero() == false {
+	if table.InvitationCreatedAt != nil && table.InvitationCreatedAt.IsZero() == false {
 		update["invitation_created_at"] = table.InvitationCreatedAt
 	}
-	if table.InvitationSentAt.IsZero() == false {
+	if table.InvitationSentAt != nil && table.InvitationSentAt.IsZero() == false {
 		update["invitation_sent_at"] = table.InvitationSentAt
 	}
-	if table.InvitationAcceptedAt.IsZero() == false {
+	if table.InvitationAcceptedAt != nil && table.InvitationAcceptedAt.IsZero() == false {
 		update["invitation_accepted_at"] = table.InvitationAcceptedAt
 	}
 	if table.InvitationLimit != 0 {
@@ -195,7 +195,7 @@ func (d *usersDao) updateDataByID(ctx context.Context, db *gorm.DB, table *model
 	if table.Mobile != "" {
 		update["mobile"] = table.Mobile
 	}
-	if table.EntryCompanyDate.IsZero() == false {
+	if table.EntryCompanyDate != nil && table.EntryCompanyDate.IsZero() == false {
 		update["entry_company_date"] = table.EntryCompanyDate
 	}
 	if table.Gender != nil {
