@@ -24,6 +24,12 @@ http:
 
 
 
+# jwt settings
+jwt:
+  signingKey: "change-me"    # jwt signing key for token validation and generation
+  expire: 86400              # token expiry seconds (24h)
+
+
 # logger settings
 logger:
   level: "info"             # output log levels debug, info, warn, error, default is debug
