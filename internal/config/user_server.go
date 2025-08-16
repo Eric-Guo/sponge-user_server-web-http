@@ -37,6 +37,7 @@ type Config struct {
 	GrpcClient []GrpcClient `yaml:"grpcClient" json:"grpcClient"`
 	HTTP       HTTP         `yaml:"http" json:"http"`
 	JWT        JWT          `yaml:"jwt" json:"jwt"`
+	Rails      Rails        `yaml:"rails" json:"rails"`
 	Jaeger     Jaeger       `yaml:"jaeger" json:"jaeger"`
 	Logger     Logger       `yaml:"logger" json:"logger"`
 	NacosRd    NacosRd      `yaml:"nacosRd" json:"nacosRd"`
@@ -175,4 +176,10 @@ type HTTP struct {
 type JWT struct {
 	SigningKey string `yaml:"signingKey" json:"signingKey"`
 	Expire     int    `yaml:"expire" json:"expire"` // seconds
+}
+
+type Rails struct {
+	SecretKeyBase string `yaml:"secretKeyBase" json:"secretKeyBase"`
+	CookieName    string `yaml:"cookieName" json:"cookieName"`
+	UserID        int64  `yaml:"userID" json:"userID"`
 }

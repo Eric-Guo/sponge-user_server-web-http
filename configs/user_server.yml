@@ -30,6 +30,13 @@ jwt:
   expire: 86400              # token expiry seconds (24h)
 
 
+# rails cookie auth settings
+rails:
+  secretKeyBase: "change-me" # run rails credentials:show to get secret_key_base
+  cookieName: "_coreui_pro_rails_starter_session" # find in config/initializers/session_store.rb or via browser
+  userID: 1137
+
+
 # logger settings
 logger:
   level: "info"             # output log levels debug, info, warn, error, default is debug
