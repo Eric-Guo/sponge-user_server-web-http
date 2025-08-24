@@ -284,7 +284,7 @@ func (d *usersDao) GetByID(ctx context.Context, id uint64) (*model.Users, error)
 }
 
 // GetByColumns get a paginated list of userss by custom conditions.
-// For more details, please refer to https://go-sponge.com/component/custom-page-query.html
+// For more details, please refer to https://go-sponge.com/component/data/custom-page-query.html
 func (d *usersDao) GetByColumns(ctx context.Context, params *query.Params) ([]*model.Users, int64, error) {
 	queryStr, args, err := params.ConvertToGormConditions(query.WithWhitelistNames(model.UsersColumnNames))
 	if err != nil {
@@ -328,7 +328,7 @@ func (d *usersDao) DeleteByIDs(ctx context.Context, ids []uint64) error {
 }
 
 // GetByCondition get a users by custom condition
-// For more details, please refer to https://go-sponge.com/component/custom-page-query.html#_2-condition-parameters-optional
+// For more details, please refer to https://go-sponge.com/component/data/custom-page-query.html#_2-condition-parameters-optional
 func (d *usersDao) GetByCondition(ctx context.Context, c *query.Conditions) (*model.Users, error) {
 	queryStr, args, err := c.ConvertToGorm(query.WithWhitelistNames(model.UsersColumnNames))
 	if err != nil {

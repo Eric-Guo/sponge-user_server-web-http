@@ -46,13 +46,13 @@ type CreateUsersRequest struct {
 	PreSsoID                   string     `json:"preSsoID" binding:""`
 	Mobile                     string     `json:"mobile" binding:""`
 	EntryCompanyDate           *time.Time `json:"entryCompanyDate" binding:""`
-	Gender                     bool       `json:"gender" binding:""`
+	Gender                     *bool      `json:"gender" binding:""`
 	PerPage                    int        `json:"perPage" binding:""`
-	OpenInNewTab               bool       `json:"openInNewTab" binding:""`
+	OpenInNewTab               *bool      `json:"openInNewTab" binding:""`
 	MajorCode                  string     `json:"majorCode" binding:""`
 	MajorName                  string     `json:"majorName" binding:""`
-	PositionChangedInLastMonth bool       `json:"positionChangedInLastMonth" binding:""`
-	NewUI                      bool       `json:"newUI" binding:""`
+	PositionChangedInLastMonth *bool      `json:"positionChangedInLastMonth" binding:""`
+	NewUI                      *bool      `json:"newUI" binding:""`
 	PositionNcPkPost           string     `json:"positionNcPkPost" binding:""`
 	WindowsSid                 string     `json:"windowsSid" binding:""`
 }
@@ -95,13 +95,13 @@ type UpdateUsersByIDRequest struct {
 	PreSsoID                   string     `json:"preSsoID" binding:""`
 	Mobile                     string     `json:"mobile" binding:""`
 	EntryCompanyDate           *time.Time `json:"entryCompanyDate" binding:""`
-	Gender                     bool       `json:"gender" binding:""`
+	Gender                     *bool      `json:"gender" binding:""`
 	PerPage                    int        `json:"perPage" binding:""`
-	OpenInNewTab               bool       `json:"openInNewTab" binding:""`
+	OpenInNewTab               *bool      `json:"openInNewTab" binding:""`
 	MajorCode                  string     `json:"majorCode" binding:""`
 	MajorName                  string     `json:"majorName" binding:""`
-	PositionChangedInLastMonth bool       `json:"positionChangedInLastMonth" binding:""`
-	NewUI                      bool       `json:"newUI" binding:""`
+	PositionChangedInLastMonth *bool      `json:"positionChangedInLastMonth" binding:""`
+	NewUI                      *bool      `json:"newUI" binding:""`
 	PositionNcPkPost           string     `json:"positionNcPkPost" binding:""`
 	WindowsSid                 string     `json:"windowsSid" binding:""`
 }
@@ -146,13 +146,13 @@ type UsersObjDetail struct {
 	PreSsoID                   string     `json:"preSsoID"`
 	Mobile                     string     `json:"mobile"`
 	EntryCompanyDate           *time.Time `json:"entryCompanyDate"`
-	Gender                     bool       `json:"gender"`
+	Gender                     *bool      `json:"gender"`
 	PerPage                    int        `json:"perPage"`
-	OpenInNewTab               bool       `json:"openInNewTab"`
+	OpenInNewTab               *bool      `json:"openInNewTab"`
 	MajorCode                  string     `json:"majorCode"`
 	MajorName                  string     `json:"majorName"`
-	PositionChangedInLastMonth bool       `json:"positionChangedInLastMonth"`
-	NewUI                      bool       `json:"newUI"`
+	PositionChangedInLastMonth *bool      `json:"positionChangedInLastMonth"`
+	NewUI                      *bool      `json:"newUI"`
 	PositionNcPkPost           string     `json:"positionNcPkPost"`
 	WindowsSid                 string     `json:"windowsSid"`
 }
