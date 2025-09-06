@@ -1,0 +1,11 @@
+---
+description: Logging, metrics, tracing, profiling guidance
+globs: internal/**/*.go,configs/*.yml
+---
+### Observability
+
+- Logging: Global request logging via `middleware.Logging` configured in [internal/routers/routers.go](mdc:internal/routers/routers.go). Use `logger` and include `middleware.GCtxRequestIDField(c)`.
+- Metrics: Enable with `app.enableMetrics` to expose Prometheus metrics (default path `/metrics`, ignoring 404s) via `metrics.Metrics` middleware.
+- Tracing: Enable with `app.enableTrace`; set Jaeger config in YAML. Router adds `middleware.Tracing(app.name)` when enabled.
+- Profiling: Enable HTTP profile pages with `app.enableHTTPProfile`; `prof.Register` adds handlers in router.
+- Request IDs: Always present via `middleware.RequestID()`; propagate by using `middleware.WrapCtx(c)`.

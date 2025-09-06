@@ -1,0 +1,14 @@
+---
+description: Swagger/OpenAPI docs generation and serving
+---
+### Swagger / OpenAPI
+
+- API docs metadata is declared in [cmd/user_server/main.go](mdc:cmd/user_server/main.go) with `@title`, `@version`, security schema, and host.
+- Docs are served when `app.env != prod` at `/swagger/*any` in [internal/routers/routers.go](mdc:internal/routers/routers.go), after setting `docs.SwaggerInfo.BasePath = "/"`.
+- Generate docs with:
+
+```bash
+make docs
+```
+
+- View docs at `http://localhost:8080/swagger/index.html`.

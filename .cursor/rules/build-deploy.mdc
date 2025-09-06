@@ -1,0 +1,19 @@
+---
+description: Build, run, and deployment commands and scripts
+---
+### Build & Deployment
+
+- Common commands from [Makefile](mdc:Makefile):
+  - `make build` → builds `cmd/user_server/user_server`
+  - `make run` → runs via [scripts/run.sh](mdc:scripts/run.sh) (optionally `Config=configs/xxx.yml`)
+  - `make docs` → generates Swagger via [scripts/swag-docs.sh](mdc:scripts/swag-docs.sh)
+  - `make test` / `make cover` → run tests and coverage
+  - `make image-build-local` / `make image-build` / `make image-push`
+  - `make deploy-k8s` / `make deploy-binary`
+- Deployment assets:
+  - Binary: [deployments/binary/](mdc:deployments/binary)
+  - Docker Compose: [deployments/docker-compose/](mdc:deployments/docker-compose)
+  - Kubernetes: [deployments/kubernetes/](mdc:deployments/kubernetes)
+  - Dockerfiles: [scripts/build/](mdc:scripts/build)
+
+Config file can be overridden on run/build scripts; ensure DB/Redis/Jaeger endpoints are reachable when enabling those features.

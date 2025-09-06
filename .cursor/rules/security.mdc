@@ -1,0 +1,11 @@
+---
+description: Security and auth (JWT, Rails cookie)
+globs: internal/routers/*.go,configs/*.yml
+---
+### Security / Auth
+
+- JWT Auth: Enabled for users routes when `jwt.signingKey` in [configs/user_server.yml](mdc:configs/user_server.yml) is not `change-me`.
+  - The router adds `middleware.Auth` with `WithSignKey` and an example `WithExtraVerify` in [internal/routers/users.go](mdc:internal/routers/users.go).
+  - Handlers declare `@Security BearerAuth` in swagger comments (see [internal/handler/users.go](mdc:internal/handler/users.go)).
+- Rails Cookie Auth: When `rails.secretKeyBase` and `rails.cookieName` are set, router applies `RailsCookieAuthMiddleware` and `VerifyRailsSessionUserIdIs` (see [internal/routers/users.go](mdc:internal/routers/users.go)).
+- Prefer least-privilege middleware: if not all routes require auth, apply middleware to specific route groups or endpoints.

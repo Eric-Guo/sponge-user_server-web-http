@@ -1,0 +1,10 @@
+---
+description: Testing guidance and conventions
+globs: internal/**/**/*_test.go
+---
+### Testing
+
+- Run tests: `make test` (no caching) or `make cover` for coverage HTML.
+- Unit tests live next to code (e.g., [internal/dao/users_test.go](mdc:internal/dao/users_test.go), [internal/cache/users_test.go](mdc:internal/cache/users_test.go), [internal/handler/users_test.go](mdc:internal/handler/users_test.go)).
+- Use `sqlmock` for DB interactions and isolate Redis with `miniredis` or mocked cache when needed.
+- Prefer table-driven tests and short mode for quick feedback.

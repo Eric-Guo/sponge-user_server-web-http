@@ -1,0 +1,18 @@
+---
+description: Router registration and middleware guidance
+globs: internal/routers/*.go
+---
+### Routing and Middleware
+
+- Main router setup: [internal/routers/routers.go](mdc:internal/routers/routers.go)
+  - Global middlewares: recovery, CORS, request ID, logging, optional metrics/limit/circuit-breaker/tracing/profile based on config.
+  - Health endpoints: `/health`, `/ping`, `/codes`.
+  - Swagger enabled when `app.env != prod` at `/swagger/*any` after setting `docs.SwaggerInfo.BasePath`.
+- Route groups: `apiV1RouterFns` pattern for modular route registration via `registerRouters`.
+- Users routes defined in: [internal/routers/users.go](mdc:internal/routers/users.go)
+  - Path prefix: `/api/v1/users`
+  - Conditional JWT auth when `jwt.signingKey != "change-me"` using `middleware.Auth`.
+  - Optional Rails cookie auth using `middleware.RailsCookieAuthMiddleware` and `VerifyRailsSessionUserIdIs` when configured.
+  - CRUD and list endpoints mapped to handler methods in [internal/handler/users.go](mdc:internal/handler/users.go).
+
+Add new feature routes by appending a function to `apiV1RouterFns` in an `init()` and registering your group's routes inside it.
