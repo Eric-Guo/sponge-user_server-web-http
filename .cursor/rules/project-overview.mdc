@@ -1,0 +1,25 @@
+---
+alwaysApply: true
+---
+### Project Overview
+
+This is a Go HTTP service built with `gin` and `sponge`.
+
+- Entrypoint: [cmd/user_server/main.go](mdc:cmd/user_server/main.go)
+- Server: [internal/server/http.go](mdc:internal/server/http.go)
+- Router: [internal/routers/routers.go](mdc:internal/routers/routers.go)
+- Users routes: [internal/routers/users.go](mdc:internal/routers/users.go)
+- Handlers: [internal/handler/](mdc:internal/handler)
+- DAO: [internal/dao/](mdc:internal/dao)
+- Models: [internal/model/](mdc:internal/model)
+- Types (DTOs): [internal/types/](mdc:internal/types)
+- Config struct: [internal/config/user_server.go](mdc:internal/config/user_server.go)
+- Config YAML: [configs/user_server.yml](mdc:configs/user_server.yml)
+- Make targets: [Makefile](mdc:Makefile)
+- Docs: [docs/](mdc:docs)
+
+High-level call chain:
+
+`cmd/user_server/main.go` → `internal/server/http.go` → `internal/routers/routers.go` → `internal/handler` → `internal/dao` → `internal/model`
+
+Key dependencies are pinned in [go.mod](mdc:go.mod), with `sponge` replaced to local path for rapid development.

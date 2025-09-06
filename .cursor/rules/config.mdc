@@ -1,0 +1,19 @@
+---
+description: Configuration mapping between YAML and generated Go structs
+globs: configs/*.yml,internal/config/*.go
+---
+### Configuration
+
+- Primary config file: [configs/user_server.yml](mdc:configs/user_server.yml)
+- Generated config structs: [internal/config/user_server.go](mdc:internal/config/user_server.go)
+- Accessor: `config.Get()` loads parsed config; initialize via `config.Init(path)` during app startup in [cmd/user_server/initial](mdc:cmd/user_server/initial).
+
+Notable flags that affect behavior in routers and server:
+
+- `app.env` controls Swagger exposure and debugging features (`prod` disables `/config` and Swagger UI).
+- `app.enableMetrics`, `app.enableLimit`, `app.enableCircuitBreaker`, `app.enableTrace`, `app.enableHTTPProfile` toggle middlewares in [internal/routers/routers.go](mdc:internal/routers/routers.go).
+- `http.port` and `http.timeout` configure the HTTP server in [internal/server/http.go](mdc:internal/server/http.go).
+- `jwt.signingKey` enables JWT auth when not equal to `"change-me"` in [internal/routers/users.go](mdc:internal/routers/users.go).
+- `rails.*` enables Rails cookie auth middleware in [internal/routers/users.go](mdc:internal/routers/users.go).
+- `database.*` selects DB driver and options; mysql DSN required for MySQL.
+- `redis.*` used when `app.cacheType` is set to `redis`.

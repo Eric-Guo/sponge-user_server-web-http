@@ -1,0 +1,14 @@
+---
+description: Go conventions for handlers, DAO, and error handling
+globs: internal/**/*.go
+---
+### Go Conventions (project-specific)
+
+- Handlers live in [internal/handler/](mdc:internal/handler) and expose small interfaces (e.g., `UsersHandler`) with constructor `NewXxxHandler()`.
+- Data flow: request DTOs in [internal/types/](mdc:internal/types) → copy to models in [internal/model/](mdc:internal/model) via `copier.Copy` → call DAO in [internal/dao/](mdc:internal/dao).
+- Always bind request data with `c.ShouldBindJSON` for JSON bodies or query helpers for GET; validate and early-return on error.
+- Wrap `gin.Context` with `middleware.WrapCtx(c)` before passing to DAO to preserve request-scoped values (e.g., request ID).
+- Log via `logger` with `middleware.GCtxRequestIDField(c)` for correlation.
+- Error handling: map input errors to `ecode.InvalidParams`, not-found to `ecode.NotFound`, and internal failures to `ecode.InternalServerError.ToHTTPCode()`.
+- Use `convertXxx` helpers to transform `model` to DTO for responses when needed. Example in [internal/handler/users.go](mdc:internal/handler/users.go).
+- Prefer early returns and guard clauses; avoid deep nesting.
