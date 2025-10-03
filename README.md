@@ -1,6 +1,12 @@
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Eric-Guo/sponge-user_server-web-http)
 # user_server (http, monolith)
 
+## Web 生成参数
+
+```bash
+sponge web http --module-name=testUserServer --server-name=userServer --project-name=testSponge --db-driver=mysql --db-dsn='root:@(127.0.0.1:3306)/thape_cybros_dev' --db-table=users --extended-api=true --embed=true --out=.
+```
+
 ## 概述
 
 1. **服务名称与定位**  
